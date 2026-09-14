@@ -1,0 +1,861 @@
+/* =========================================================
+   FACE REGISTRATION - COMPACT + RESPONSIVE
+   ========================================================= */
+
+#faceRegistrationApp {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 8px 12px 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.face-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.face-header-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: #fff;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 6px 18px rgba(37, 99, 235, 0.20);
+}
+
+.face-header h2 {
+    margin: 0 0 2px;
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 750;
+}
+
+.face-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.face-progress-section {
+    margin-bottom: 15px;
+}
+
+.face-progress-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.face-progress-top span:last-child {
+    color: #2563eb;
+}
+
+.face-progress-bar {
+    width: 100%;
+    height: 6px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+    border-radius: 999px;
+}
+
+.face-progress-fill {
+    width: 0;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    border-radius: inherit;
+
+    transition: width 0.35s ease;
+}
+
+/* =========================================================
+   STEPS
+   ========================================================= */
+
+.face-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.face-step {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    color: #9ca3af;
+}
+
+.face-step-number {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: all 0.25s ease;
+}
+
+.face-step-label {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.face-step.active {
+    color: #2563eb;
+}
+
+.face-step.active .face-step-number {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.20);
+}
+
+.face-step.completed {
+    color: #16a34a;
+}
+
+.face-step.completed .face-step-number {
+    color: #fff;
+    background: #16a34a;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.face-registration-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(250px, 0.75fr);
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.face-camera-card,
+.face-instructions-card {
+    background: #fff;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.045);
+
+    overflow: hidden;
+}
+
+/* =========================================================
+   CAMERA HEADER
+   ========================================================= */
+
+.face-camera-header {
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 13px;
+
+    border-bottom:
+        1px solid #eef0f3;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.face-camera-header > div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.face-live-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.10);
+}
+
+#faceCameraStatus {
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+/* =========================================================
+   CAMERA
+   ========================================================= */
+
+.face-camera-container {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+#faceEnrollmentVideo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+#faceLandmarksCanvas {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   GUIDE
+   ========================================================= */
+
+.face-guide {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.face-guide-face {
+    position: absolute;
+
+    width: 37%;
+    height: 72%;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        2px dashed
+        rgba(255, 255, 255, 0.75);
+
+    border-radius:
+        48% 48% 45% 45%;
+}
+
+/* Guide corners */
+
+.face-guide-corner {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    border-color: #60a5fa;
+    border-style: solid;
+}
+
+.face-guide-corner.top-left {
+    top: 16px;
+    left: 16px;
+
+    border-width:
+        2px 0 0 2px;
+}
+
+.face-guide-corner.top-right {
+    top: 16px;
+    right: 16px;
+
+    border-width:
+        2px 2px 0 0;
+}
+
+.face-guide-corner.bottom-left {
+    bottom: 16px;
+    left: 16px;
+
+    border-width:
+        0 0 2px 2px;
+}
+
+.face-guide-corner.bottom-right {
+    bottom: 16px;
+    right: 16px;
+
+    border-width:
+        0 2px 2px 0;
+}
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.face-countdown {
+    position: absolute;
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0, 0, 0, 0.18);
+}
+
+.face-countdown.hidden {
+    display: none;
+}
+
+#faceCountdownNumber {
+    width: 86px;
+    height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(17, 24, 39, 0.88);
+
+    border:
+        3px solid
+        rgba(96, 165, 250, 0.9);
+
+    color: #fff;
+
+    font-size: 46px;
+    font-weight: 800;
+
+    box-shadow:
+        0 0 30px
+        rgba(37, 99, 235, 0.30);
+
+    animation:
+        countdownPulse 1s ease;
+}
+
+@keyframes countdownPulse {
+    0% {
+        transform: scale(0.65);
+        opacity: 0;
+    }
+
+    55% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   FLASH
+   ========================================================= */
+
+.face-capture-flash {
+    position: absolute;
+    inset: 0;
+
+    z-index: 20;
+
+    background: #fff;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.face-capture-flash.active {
+    animation:
+        captureFlash 0.3s ease;
+}
+
+@keyframes captureFlash {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.face-status {
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 13px;
+
+    background: #f9fafb;
+
+    color: #4b5563;
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+/* =========================================================
+   INSTRUCTIONS CARD
+   ========================================================= */
+
+.face-instructions-card {
+    min-height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.face-instruction-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(37, 99, 235, 0.09);
+
+    color: #2563eb;
+
+    font-size: 20px;
+}
+
+.face-instruction-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #9ca3af;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.face-instructions-card h3 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+    line-height: 1.2;
+
+    font-weight: 750;
+}
+
+.face-instructions-card p {
+    margin: 0;
+
+    max-width: 300px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Hold indicator */
+
+.face-hold-indicator {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #6b7280;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.hold-dot {
+    width: 8px;
+    height: 8px;
+
+    flex: 0 0 8px;
+
+    border-radius: 50%;
+
+    background: #9ca3af;
+}
+
+.hold-dot.ready {
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.10);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.face-registration-footer {
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 13px;
+
+    background: #fff;
+
+    box-shadow:
+        0 4px 16px rgba(15, 23, 42, 0.035);
+}
+
+.face-security-info {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #6b7280;
+
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.face-security-info .fa {
+    flex: 0 0 auto;
+    color: #16a34a;
+}
+
+.face-actions {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.face-actions button {
+    min-width: 132px;
+    height: 34px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    #faceRegistrationApp {
+        max-width: 900px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .face-registration-layout {
+        grid-template-columns: 1.25fr 0.75fr;
+    }
+
+    .face-instructions-card {
+        padding: 16px;
+    }
+
+    .face-instructions-card h3 {
+        font-size: 19px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #faceRegistrationApp {
+        padding: 5px 6px 15px;
+    }
+
+    .face-header {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .face-header-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+
+        border-radius: 11px;
+
+        font-size: 16px;
+    }
+
+    .face-header h2 {
+        font-size: 18px;
+    }
+
+    .face-header p {
+        font-size: 10px;
+    }
+
+    .face-steps {
+        gap: 3px;
+    }
+
+    .face-step-number {
+        width: 24px;
+        height: 24px;
+    }
+
+    .face-step-label {
+        font-size: 9px;
+    }
+
+    .face-registration-layout {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .face-camera-container {
+        aspect-ratio: 4 / 3;
+    }
+
+    .face-guide-face {
+        width: 44%;
+        height: 70%;
+    }
+
+    .face-instructions-card {
+        min-height: auto;
+        padding: 14px;
+    }
+
+    .face-instruction-icon {
+        width: 40px;
+        height: 40px;
+
+        margin-bottom: 10px;
+
+        border-radius: 11px;
+        font-size: 17px;
+    }
+
+    .face-instructions-card h3 {
+        font-size: 18px;
+    }
+
+    .face-instructions-card p {
+        max-width: none;
+        font-size: 11px;
+    }
+
+    .face-hold-indicator {
+        margin-top: 12px;
+    }
+
+    .face-registration-footer {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 10px;
+
+        padding: 11px;
+    }
+
+    .face-security-info {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .face-actions {
+        width: 100%;
+    }
+
+    .face-actions button {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .face-header p {
+        display: none;
+    }
+
+    .face-progress-top {
+        font-size: 10px;
+    }
+
+    .face-step-label {
+        font-size: 8px;
+    }
+
+    .face-step-number {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+
+    .face-camera-header {
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .face-status {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .face-actions {
+        flex-direction: column;
+    }
+
+    .face-actions button {
+        width: 100%;
+        height: 36px;
+    }
+
+    #faceCountdownNumber {
+        width: 76px;
+        height: 76px;
+        font-size: 40px;
+    }
+}

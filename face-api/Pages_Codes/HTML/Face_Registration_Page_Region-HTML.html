@@ -1,0 +1,311 @@
+<div id="faceRegistrationApp">
+
+    <!-- Header -->
+    <div class="face-header">
+
+        <div class="face-header-icon">
+            <span class="fa fa-camera" aria-hidden="true"></span>
+        </div>
+
+        <div>
+            <h2>Secure Face Registration</h2>
+            <p>
+                Register your face from five different angles
+                for a more reliable authentication.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Progress -->
+    <div class="face-progress-section">
+
+        <div class="face-progress-top">
+
+            <span id="faceStepText">
+                Step 1 of 5
+            </span>
+
+            <span id="faceProgressPercent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="face-progress-bar">
+
+            <div
+                id="faceProgressFill"
+                class="face-progress-fill">
+            </div>
+
+        </div>
+
+
+        <div class="face-steps">
+
+            <div
+                class="face-step active"
+                data-step="CENTER">
+
+                <span class="face-step-number">1</span>
+
+                <span class="face-step-label">
+                    Center
+                </span>
+
+            </div>
+
+
+            <div
+                class="face-step"
+                data-step="LEFT">
+
+                <span class="face-step-number">2</span>
+
+                <span class="face-step-label">
+                    Left
+                </span>
+
+            </div>
+
+
+            <div
+                class="face-step"
+                data-step="RIGHT">
+
+                <span class="face-step-number">3</span>
+
+                <span class="face-step-label">
+                    Right
+                </span>
+
+            </div>
+
+
+            <div
+                class="face-step"
+                data-step="UP">
+
+                <span class="face-step-number">4</span>
+
+                <span class="face-step-label">
+                    Up
+                </span>
+
+            </div>
+
+
+            <div
+                class="face-step"
+                data-step="DOWN">
+
+                <span class="face-step-number">5</span>
+
+                <span class="face-step-label">
+                    Down
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Camera Area -->
+    <div class="face-registration-layout">
+
+
+        <!-- Camera -->
+        <div class="face-camera-card">
+
+            <div class="face-camera-header">
+
+                <div>
+
+                    <span class="face-live-dot"></span>
+
+                    <span>
+                        Live Camera
+                    </span>
+
+                </div>
+
+                <span id="faceCameraStatus">
+                    Camera not started
+                </span>
+
+            </div>
+
+
+            <div class="face-camera-container">
+
+                <video
+                    id="faceEnrollmentVideo"
+                    autoplay
+                    muted
+                    playsinline>
+                </video>
+
+
+                <canvas
+                    id="faceLandmarksCanvas">
+                </canvas>
+
+
+                <!-- Guide -->
+                <div
+                    id="faceGuide"
+                    class="face-guide">
+
+                    <div
+                        class="face-guide-corner top-left">
+                    </div>
+
+                    <div
+                        class="face-guide-corner top-right">
+                    </div>
+
+                    <div
+                        class="face-guide-corner bottom-left">
+                    </div>
+
+                    <div
+                        class="face-guide-corner bottom-right">
+                    </div>
+
+                    <div
+                        class="face-guide-face">
+                    </div>
+
+                </div>
+
+
+                <!-- Countdown -->
+                <div
+                    id="faceCountdown"
+                    class="face-countdown hidden">
+
+                    <span id="faceCountdownNumber">
+                        3
+                    </span>
+
+                </div>
+
+
+                <!-- Capture Result -->
+                <div
+                    id="faceCaptureFlash"
+                    class="face-capture-flash">
+                </div>
+
+            </div>
+
+
+            <div
+                id="faceEnrollmentStatus"
+                class="face-status">
+
+                Preparing face recognition...
+
+            </div>
+
+        </div>
+
+
+        <!-- Instructions -->
+        <div class="face-instructions-card">
+
+            <div class="face-instruction-icon">
+                <span
+                    id="faceDirectionIcon"
+                    class="fa fa-user">
+                </span>
+            </div>
+
+
+            <div class="face-instruction-content">
+
+                <span class="face-instruction-label">
+                    Current Position
+                </span>
+
+                <h3 id="faceDirectionTitle">
+                    Look Straight
+                </h3>
+
+                <p id="faceDirectionDescription">
+                    Look directly at the camera
+                    and keep your face inside the frame.
+                </p>
+
+            </div>
+
+
+            <div class="face-hold-indicator">
+
+                <span
+                    id="faceHoldDot"
+                    class="hold-dot">
+                </span>
+
+                <span id="faceHoldText">
+                    Waiting for face...
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div class="face-registration-footer">
+
+        <div class="face-security-info">
+
+            <span class="fa fa-shield"></span>
+
+            <span>
+                Your face data is stored securely
+                as encrypted biometric descriptors.
+            </span>
+
+        </div>
+
+
+        <div class="face-actions">
+
+            <button
+                type="button"
+                id="startCameraBtn"
+                class="t-Button t-Button--hot">
+
+                <span class="fa fa-video-camera"></span>
+
+                Start Camera
+
+            </button>
+
+
+            <button
+                type="button"
+                id="registerFaceBtn"
+                class="t-Button t-Button--primary"
+                disabled>
+
+                <span class="fa fa-camera"></span>
+
+                Start Registration
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

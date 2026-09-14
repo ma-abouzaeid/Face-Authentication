@@ -1,0 +1,76 @@
+<div
+    id="faceLoginPanel"
+    style="display:none;">
+
+    <div class="face-login-header">
+
+        <span class="fa fa-smile-o"></span>
+
+        <div>
+
+            <h3>Login with Face ID</h3>
+
+            <p>
+                Look at the camera to verify your identity.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="face-login-camera">
+
+        <video
+            id="faceLoginVideo"
+            autoplay
+            muted
+            playsinline>
+        </video>
+
+        <canvas
+            id="faceLoginCanvas">
+        </canvas>
+
+
+        <div class="face-login-guide">
+
+            <div class="face-login-guide-oval"></div>
+
+        </div>
+
+
+        <div
+            id="faceLoginCountdown"
+            class="face-login-countdown hidden">
+
+            <span id="faceLoginCountdownNumber">
+                3
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="faceLoginStatus"
+        class="face-login-status">
+
+        Preparing Face ID...
+
+    </div>
+
+
+    <button
+        type="button"
+        id="faceLoginBackBtn"
+        class="t-Button">
+
+        <span class="fa fa-arrow-left"></span>
+
+        Use Password
+
+    </button>
+
+</div>
