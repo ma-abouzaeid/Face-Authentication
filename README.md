@@ -1,4 +1,4 @@
-# AI-Powered Face Authentication for Oracle APEX
+# Face Authentication System for Oracle APEX
 
 A professional biometric authentication system built with **Oracle APEX**, **Oracle Database**, **PL/SQL**, **JavaScript**, and **face-api.js**.
 
