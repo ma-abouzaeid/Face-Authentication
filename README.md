@@ -1519,6 +1519,6 @@ Further production hardening and biometric threshold calibration are recommended
 # 42. Author
 
 ```text
-Author: Your Name
-GitHub: [https://github.com/YOUR_USERNAME]https://github.com/ma-abouzaeid)
+Author: Mahmoud Abou-Zaeid
+GitHub: https://github.com/ma-abouzaeid
 ```
