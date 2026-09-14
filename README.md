@@ -1516,21 +1516,9 @@ Further production hardening and biometric threshold calibration are recommended
 
 ---
 
-# 41. License
-
-Add the project's selected license here.
-
-Example:
-
-```text
-MIT License
-```
-
----
-
 # 42. Author
 
 ```text
 Author: Your Name
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: [https://github.com/YOUR_USERNAME]https://github.com/ma-abouzaeid)
 ```
